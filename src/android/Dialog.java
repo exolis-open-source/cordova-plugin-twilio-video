@@ -1,4 +1,4 @@
-package cordova-plugin-twilio-video;
+package fr.exolis.opensource.videoconversation;
 
 import android.content.Context;
 import android.content.DialogInterface;

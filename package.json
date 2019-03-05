@@ -1,5 +1,28 @@
 {
-    "version": "0.2.0",
+    "name": "cordova-plugin-twilio-video",
+    "_from": "git+https://github.com/PriceFallin/cordova-plugin-twilio-video.git",
+    "_id": "cordova-plugin-twilio-video@0.2.0",
+    "_inBundle": false,
+    "_location": "/cordova-plugin-twilio-video",
+    "_phantomChildren": {},
+    "_requested": {
+        "type": "git",
+        "raw": "https://github.com/PriceFallin/cordova-plugin-twilio-video",
+        "rawSpec": "https://github.com/PriceFallin/cordova-plugin-twilio-video",
+        "saveSpec": "git+https://github.com/PriceFallin/cordova-plugin-twilio-video.git",
+        "fetchSpec": "https://github.com/PriceFallin/cordova-plugin-twilio-video.git",
+        "gitCommittish": null
+    },
+    "_requiredBy": [
+        "#USER",
+        "/"
+    ],
+    "_resolved": "git+https://github.com/PriceFallin/cordova-plugin-twilio-video.git#479b81f2f3a5a18dd285e92ecdf34d0e9d089064",
+    "_spec": "https://github.com/PriceFallin/cordova-plugin-twilio-video",
+    "bundleDependencies": false,
+    "deprecated": false,
+    "description": "**Using the cordova plugin**",
+    "version": "0.2.1",
     "name": "cordova-plugin-twilio-video",
     "cordova_name": "Twilio video room plugin",
     "license": "Apache 2.0",

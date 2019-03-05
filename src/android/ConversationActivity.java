@@ -1,5 +1,4 @@
-package cordova-plugin-twilio-video;
-
+package fr.exolis.opensource.videoconversation;
 
 import android.Manifest;
 import android.content.Context;
@@ -20,10 +19,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-import com.google.gson.JsonObject;
-import com.koushikdutta.async.future.FutureCallback;
-import com.koushikdutta.ion.Ion;
 import com.twilio.video.CameraCapturer;
 import com.twilio.video.LocalParticipant;
 import com.twilio.video.RoomState;
@@ -265,14 +260,6 @@ public class ConversationActivity extends AppCompatActivity {
         localVideoView = primaryVideoView;
     }
 
-    private void setAccessToken() {
-        // OPTION 1- Generate an access token from the getting started portal
-        // https://www.twilio.com/console/video/dev-tools/testing-tools
-
-        // OPTION 2- Retrieve an access token from your own web app
-        // retrieveAccessTokenfromServer();
-    }
-
     private void connectToRoom(String roomName) {
         configureAudio(true);
         ConnectOptions.Builder connectOptionsBuilder = new ConnectOptions.Builder(accessToken)
@@ -295,7 +282,6 @@ public class ConversationActivity extends AppCompatActivity {
         room = Video.connect(this, connectOptionsBuilder.build(), roomListener());
         setDisconnectAction();
 
-        
     }
 
     /*
@@ -669,24 +655,6 @@ public class ConversationActivity extends AppCompatActivity {
                 }
             }
         };
-    }
-
-    private void retrieveAccessTokenfromServer() {
-        Ion.with(this)
-                .load("http://localhost:8000/token.php")
-                .asJsonObject()
-                .setCallback(new FutureCallback<JsonObject>() {
-                    @Override
-                    public void onCompleted(Exception e, JsonObject result) {
-                        if (e == null) {
-                            ConversationActivity.this.accessToken = result.get("token").getAsString();
-                        } else {
-                            Toast.makeText(ConversationActivity.this,
-                                    R.string.error_retrieving_access_token, Toast.LENGTH_LONG)
-                                    .show();
-                        }
-                    }
-                });
     }
 
     private void configureAudio(boolean enable) {

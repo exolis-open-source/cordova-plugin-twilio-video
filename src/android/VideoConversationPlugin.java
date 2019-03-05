@@ -1,4 +1,4 @@
-package cordova-plugin-twilio-video;
+package fr.exolis.opensource.videoconversation;
 
 import org.apache.cordova.BuildHelper;
 import org.apache.cordova.CallbackContext;
@@ -32,7 +32,7 @@ public class VideoConversationPlugin extends CordovaPlugin {
         // your init code here
     }
 
-    
+
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		this.callbackContext = callbackContext;
 		if (action.equals("open")) {
@@ -63,7 +63,7 @@ public class VideoConversationPlugin extends CordovaPlugin {
                     //that.cordova.getActivity().startActivity(intentTwilioVideo);
                     that.cordova.startActivityForResult(that, intentTwilioVideo, 0);
                 }
-                    
+
             });
         } catch (JSONException e) {
             //Log.e(TAG, "Invalid JSON string: " + json, e);
