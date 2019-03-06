@@ -1,7 +1,4 @@
 {
-    "bundleDependencies": false,
-    "deprecated": false,
-    "description": "**Using the cordova plugin**",
     "version": "0.2.1",
     "name": "Twilio Video Cordova plugin - exolis fork",
     "cordova_name": "Twilio video room plugin - exolis fork",
