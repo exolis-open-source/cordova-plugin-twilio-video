@@ -115,6 +115,8 @@ public class ConversationActivity extends AppCompatActivity {
          */
         audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
 
+        identityTextView.setText("");
+
         Intent intent = getIntent();
 
         this.accessToken = intent.getStringExtra("token");
