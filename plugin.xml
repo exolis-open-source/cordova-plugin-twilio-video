@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin
     id="cordova-plugin-twilio-video"
-    version="0.2.0"
+    version="0.2.1"
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>Twilio video conversation plugin</name>
+    <name>Twilio video conversation plugin - exolis fork</name>
     <license></license>
     <js-module name="twilio-solution" src="conversation.js">
         <clobbers target="cordova.videoconversation" />
