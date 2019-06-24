@@ -444,9 +444,10 @@ public class ConversationActivity extends AppCompatActivity {
                 localParticipant = null;
                 videoStatusTextView.setText("Disconnected from " + room.getName());
                 ConversationActivity.this.room = null;
+                Log.d(TAG, "onDisconnected - disconnectedFromOnDestroy : " + disconnectedFromOnDestroy);
                 // Only reinitialize the UI if disconnect was not called from onDestroy()
+                configureAudio(false);
                 if (!disconnectedFromOnDestroy) {
-                    configureAudio(false);
                     intializeUI();
                     moveLocalVideoToPrimaryView();
                 }
