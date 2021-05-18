@@ -424,7 +424,9 @@ public class ConversationActivity extends AppCompatActivity {
             public void onConnected(Room room) {
                 localParticipant = room.getLocalParticipant();
            //     videoStatusTextView.setText("Connected to " + room.getName());
-                videoStatusTextView.setText("Waiting on other participant to join");
+                //videoStatusTextView.setText("Waiting on other participant to join");
+				videoStatusTextView.setText("Vous avez rejoint la salle d'attente");
+				videoStatusTextView.setText("En attente de la connexion de votre interlocuteur");
                 setTitle(room.getName());
 
                 for (Participant participant : room.getParticipants()) {
@@ -435,14 +437,16 @@ public class ConversationActivity extends AppCompatActivity {
 
             @Override
             public void onConnectFailure(Room room, TwilioException e) {
-                videoStatusTextView.setText("Failed to connect");
+                //videoStatusTextView.setText("Failed to connect");
+				videoStatusTextView.setText("Erreur lors de la connexion à la salle d'attente");
                 configureAudio(false);
             }
 
             @Override
             public void onDisconnected(Room room, TwilioException e) {
                 localParticipant = null;
-                videoStatusTextView.setText("Disconnected from " + room.getName());
+                //videoStatusTextView.setText("Disconnected from " + room.getName());
+				videoStatusTextView.setText("Vous avez quitté la salle d'attente");
                 ConversationActivity.this.room = null;
                 Log.d(TAG, "onDisconnected - disconnectedFromOnDestroy : " + disconnectedFromOnDestroy);
                 // Only reinitialize the UI if disconnect was not called from onDestroy()
@@ -461,7 +465,8 @@ public class ConversationActivity extends AppCompatActivity {
 
             @Override
             public void onParticipantDisconnected(Room room, Participant participant) {
-                videoStatusTextView.setText("Participant disconnected");
+                //videoStatusTextView.setText("Participant disconnected");
+				videoStatusTextView.setText("Un participant s'est déconnecté");
                 removeParticipant(participant);
             }
 

@@ -291,7 +291,8 @@
     // At the moment, this example only supports rendering one Participant at a time.
 
     // [self logMessage:[NSString stringWithFormat:@"Connected to room %@ as %@", room.name, room.localParticipant.identity]];
-    [self logMessage:@"Waiting on participant to join"];
+    //[self logMessage:@"Waiting on participant to join"];
+	[self logMessage:@"En attente de la connexion de votre interlocuteur"];
 
     if (room.participants.count > 0) {
         self.participant = room.participants[0];
@@ -331,7 +332,8 @@
         [self cleanupRemoteParticipant];
     }
     // [self logMessage:[NSString stringWithFormat:@"Room %@ participant %@ disconnected", room.name, participant.identity]];
-    [self logMessage:@"Participant disconnected"];
+    //[self logMessage:@"Participant disconnected"];
+	[self logMessage:@"Un participant s'est déconnecté"];
 }
 
 #pragma mark - TVIParticipantDelegate
