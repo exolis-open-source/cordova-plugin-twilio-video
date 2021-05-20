@@ -4,7 +4,7 @@ repositories {
 
 
 dependencies {
-    compile 'com.twilio:video-android:6.0.0'
+    compile 'com.twilio:video-android:6.3.0'
     compile 'com.android.support:appcompat-v7:27.1.0'
     compile 'com.android.support:design:27.1.0'
 }
