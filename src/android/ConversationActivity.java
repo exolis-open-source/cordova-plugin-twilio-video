@@ -23,7 +23,6 @@ import com.twilio.video.CameraCapturer;
 import com.twilio.video.LocalParticipant;
 import com.twilio.video.Room.State;
 import com.twilio.video.Video;
-import com.twilio.video.VideoRenderer;
 import com.twilio.video.TwilioException;
 import com.twilio.video.AudioTrack;
 import com.twilio.video.CameraCapturer.CameraSource;
@@ -34,6 +33,8 @@ import com.twilio.video.Participant;
 import com.twilio.video.Room;
 import com.twilio.video.VideoTrack;
 import com.twilio.video.VideoView;
+
+import tvi.webrtc.VideoSink;
 
 import java.util.Collections;
 
@@ -85,7 +86,7 @@ public class ConversationActivity extends AppCompatActivity {
 
     private int previousAudioMode;
     private boolean previousMicrophoneMute;
-    private VideoRenderer localVideoView;
+    private VideoSink localVideoView;
     private boolean disconnectedFromOnDestroy;
 
     @Override
