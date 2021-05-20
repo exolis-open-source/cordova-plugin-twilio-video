@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 import com.twilio.video.CameraCapturer;
 import com.twilio.video.LocalParticipant;
-import com.twilio.video.RoomState;
+import com.twilio.video.Room.State;
 import com.twilio.video.Video;
 import com.twilio.video.VideoRenderer;
 import com.twilio.video.TwilioException;
@@ -207,7 +207,7 @@ public class ConversationActivity extends AppCompatActivity {
          * Always disconnect from the room before leaving the Activity to
          * ensure any memory allocated to the Room resource is freed.
          */
-        if (room != null && room.getState() != RoomState.DISCONNECTED) {
+        if (room != null && room.getState() != Room.State.DISCONNECTED) {
             room.disconnect();
             disconnectedFromOnDestroy = true;
         }
