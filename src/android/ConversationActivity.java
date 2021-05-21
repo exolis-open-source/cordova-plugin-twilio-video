@@ -167,13 +167,13 @@ public class ConversationActivity extends AppCompatActivity {
          */
         if (localVideoTrack == null && checkPermissionForCameraAndMicrophone() && cameraCapturer != null) {
             localVideoTrack = LocalVideoTrack.create(this, true, cameraCapturer);
-            localVideoTrack.addRenderer(localVideoView);
+            localVideoTrack.addSink(localVideoView);
 
             /*
              * If connected to a Room then share the local video track.
              */
             if (localParticipant != null) {
-                localParticipant.addVideoTrack(localVideoTrack);
+                localParticipant.publishTrack(localVideoTrack);
             }
         }
     }
@@ -257,7 +257,7 @@ public class ConversationActivity extends AppCompatActivity {
         cameraCapturer = new CameraCapturerCompat(this, CameraCapturerCompat.Source.FRONT_CAMERA);
         localVideoTrack = LocalVideoTrack.create(this, true, cameraCapturer);
         primaryVideoView.setMirror(true);
-        localVideoTrack.addRenderer(primaryVideoView);
+        localVideoTrack.addSink(primaryVideoView);
         localVideoView = primaryVideoView;
     }
 
@@ -366,14 +366,14 @@ public class ConversationActivity extends AppCompatActivity {
     private void addParticipantVideo(VideoTrack videoTrack) {
         moveLocalVideoToThumbnailView();
         primaryVideoView.setMirror(false);
-        videoTrack.addRenderer(primaryVideoView);
+        videoTrack.addSink(primaryVideoView);
     }
 
     private void moveLocalVideoToThumbnailView() {
         if (thumbnailVideoView.getVisibility() == View.GONE) {
             thumbnailVideoView.setVisibility(View.VISIBLE);
-            localVideoTrack.removeRenderer(primaryVideoView);
-            localVideoTrack.addRenderer(thumbnailVideoView);
+            localVideoTrack.removeSink(primaryVideoView);
+            localVideoTrack.addSink(thumbnailVideoView);
             localVideoView = thumbnailVideoView;
             thumbnailVideoView.setMirror(cameraCapturer.getCameraSource() ==
                     CameraCapturerCompat.Source.FRONT_CAMERA);
@@ -400,14 +400,14 @@ public class ConversationActivity extends AppCompatActivity {
     }
 
     private void removeParticipantVideo(VideoTrack videoTrack) {
-        videoTrack.removeRenderer(primaryVideoView);
+        videoTrack.removeSink(primaryVideoView);
     }
 
     private void moveLocalVideoToPrimaryView() {
         if (thumbnailVideoView.getVisibility() == View.VISIBLE) {
-            localVideoTrack.removeRenderer(thumbnailVideoView);
+            localVideoTrack.removeSink(thumbnailVideoView);
             thumbnailVideoView.setVisibility(View.GONE);
-            localVideoTrack.addRenderer(primaryVideoView);
+            localVideoTrack.addSink(primaryVideoView);
             localVideoView = primaryVideoView;
             primaryVideoView.setMirror(cameraCapturer.getCameraSource() ==
                     CameraSource.FRONT_CAMERA);
