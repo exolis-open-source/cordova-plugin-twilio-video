@@ -254,7 +254,7 @@ public class ConversationActivity extends AppCompatActivity {
         localAudioTrack = LocalAudioTrack.create(this, true);
 
         // Share your camera
-        cameraCapturer = new CameraCapturer(this, CameraCapturer.Source.FRONT_CAMERA);
+        cameraCapturer = new CameraCapturerCompat(this, CameraCapturerCompat.Source.FRONT_CAMERA);
         localVideoTrack = LocalVideoTrack.create(this, true, cameraCapturer);
         primaryVideoView.setMirror(true);
         localVideoTrack.addRenderer(primaryVideoView);
@@ -376,7 +376,7 @@ public class ConversationActivity extends AppCompatActivity {
             localVideoTrack.addRenderer(thumbnailVideoView);
             localVideoView = thumbnailVideoView;
             thumbnailVideoView.setMirror(cameraCapturer.getCameraSource() ==
-                    CameraCapturer.Source.FRONT_CAMERA);
+                    CameraCapturerCompat.Source.FRONT_CAMERA);
         }
     }
 
@@ -589,12 +589,12 @@ public class ConversationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (cameraCapturer != null) {
-                    CameraCapturer.Source cameraSource = cameraCapturer.getCameraSource();
+                    CameraCapturerCompat.Source cameraSource = cameraCapturer.getCameraSource();
                     cameraCapturer.switchCamera();
                     if (thumbnailVideoView.getVisibility() == View.VISIBLE) {
-                        thumbnailVideoView.setMirror(cameraSource == CameraCapturer.Source.BACK_CAMERA);
+                        thumbnailVideoView.setMirror(cameraSource == CameraCapturerCompat.Source.BACK_CAMERA);
                     } else {
-                        primaryVideoView.setMirror(cameraSource == CameraCapturer.Source.BACK_CAMERA);
+                        primaryVideoView.setMirror(cameraSource == CameraCapturerCompat.Source.BACK_CAMERA);
                     }
                 }
             }
