@@ -410,7 +410,7 @@ public class ConversationActivity extends AppCompatActivity {
             localVideoTrack.addSink(primaryVideoView);
             localVideoView = primaryVideoView;
             primaryVideoView.setMirror(cameraCapturer.getCameraSource() ==
-                    CameraSource.FRONT_CAMERA);
+                    CameraCapturerCompat.Source.FRONT_CAMERA);
         }
     }
 
