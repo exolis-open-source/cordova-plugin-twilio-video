@@ -27,7 +27,7 @@ import com.twilio.video.AudioTrack;
 import com.twilio.video.ConnectOptions;
 import com.twilio.video.LocalAudioTrack;
 import com.twilio.video.LocalVideoTrack;
-import com.twilio.video.Participant;
+import com.twilio.video.RemoteParticipant;
 import com.twilio.video.Room;
 import com.twilio.video.VideoTrack;
 import com.twilio.video.VideoView;
