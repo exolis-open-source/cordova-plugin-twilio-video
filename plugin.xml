@@ -48,6 +48,7 @@
     </platform>
     <platform name="android">
         <hook type="after_plugin_install" src="hooks/after_plugin_install/hook-add-r-import.js" />
+		<preference name="android-compileSdkVersion" value="29" />
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="VideoConversationPlugin">
                 <param name="android-package" value="fr.exolis.opensource.videoconversation.VideoConversationPlugin" />
