@@ -2,8 +2,8 @@ repositories {
     jcenter()
 }
 
-ext {
-    compileSdkVersion = 29
+android {
+    compileSdkVersion 29
 }
 
 dependencies {
