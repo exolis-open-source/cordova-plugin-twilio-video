@@ -17,6 +17,8 @@ import java.util.HashMap;
 import java.util.Map;
 import tvi.webrtc.Camera1Enumerator;
 import tvi.webrtc.Camera2Enumerator;
+import tvi.webrtc.CapturerObserver;
+import tvi.webrtc.SurfaceTextureHelper;
 
 public class CameraCapturerCompat implements VideoCapturer {
 
@@ -109,6 +111,34 @@ public class CameraCapturerCompat implements VideoCapturer {
 
 	private boolean usingCamera1() {
         return camera1Capturer != null;
+    }
+
+	@Override
+    public void initialize(
+            SurfaceTextureHelper surfaceTextureHelper,
+            Context context,
+            CapturerObserver capturerObserver) {
+        activeCapturer.initialize(surfaceTextureHelper, context, capturerObserver);
+    }
+
+    @Override
+    public void startCapture(int width, int height, int framerate) {
+        activeCapturer.startCapture(width, height, framerate);
+    }
+
+    @Override
+    public void stopCapture() throws InterruptedException {
+        activeCapturer.stopCapture();
+    }
+
+    @Override
+    public boolean isScreencast() {
+        return activeCapturer.isScreencast();
+    }
+
+    @Override
+    public void dispose() {
+        activeCapturer.dispose();
     }
 
 	@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
