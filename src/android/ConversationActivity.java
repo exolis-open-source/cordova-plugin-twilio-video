@@ -332,7 +332,7 @@ public class ConversationActivity extends AppCompatActivity {
     /*
      * Called when participant joins the room
      */
-    private void addParticipant(Participant participant) {
+    private void addParticipant(RemoteParticipant participant) {
         /*
          * This app only displays video for one additional participant per Room
          */
@@ -383,7 +383,7 @@ public class ConversationActivity extends AppCompatActivity {
     /*
      * Called when participant leaves the room
      */
-    private void removeParticipant(Participant participant) {
+    private void removeParticipant(RemoteParticipant participant) {
      //   videoStatusTextView.setText("Participant "+participant.getIdentity()+ " left.");
         if (!participant.getIdentity().equals(participantIdentity)) {
             return;
@@ -457,13 +457,13 @@ public class ConversationActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onParticipantConnected(Room room, Participant participant) {
+            public void onParticipantConnected(Room room, RemoteParticipant participant) {
                 addParticipant(participant);
 
             }
 
             @Override
-            public void onParticipantDisconnected(Room room, Participant participant) {
+            public void onParticipantDisconnected(Room room, RemoteParticipant participant) {
                 //videoStatusTextView.setText("Participant disconnected");
 				videoStatusTextView.setText("Un participant s'est déconnecté");
                 removeParticipant(participant);
