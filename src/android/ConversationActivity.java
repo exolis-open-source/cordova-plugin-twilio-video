@@ -356,8 +356,12 @@ public class ConversationActivity extends AppCompatActivity {
         /*
          * Add participant renderer
          */
-        if (participant.getVideoTracks().size() > 0) {
-            addParticipantVideo(participant.getVideoTracks().get(0));
+        if (participant.getRemoteVideoTracks().size() > 0) {
+			RemoteVideoTrackPublication remoteVideoTrackPublication = participant.getRemoteVideoTracks().get(0);
+
+			if(remoteVideoTrackPublication.isTrackSubscribed()) {
+				addParticipantVideo(remoteVideoTrackPublication.getRemoteVideoTrack());
+			}
         }
 
         /*
@@ -398,8 +402,12 @@ public class ConversationActivity extends AppCompatActivity {
         /*
          * Remove participant renderer
          */
-        if (participant.getVideoTracks().size() > 0) {
-            removeParticipantVideo(participant.getVideoTracks().get(0));
+        if (participant.getRemoteVideoTracks().size() > 0) {
+			RemoteVideoTrackPublication remoteVideoTrackPublication = participant.getRemoteVideoTracks().get(0);
+
+            if (remoteVideoTrackPublication.isTrackSubscribed()) {
+				removeParticipantVideo(remoteVideoTrackPublication.getRemoteVideoTrack());
+			}
         }
         participant.setListener(null);
         moveLocalVideoToPrimaryView();
