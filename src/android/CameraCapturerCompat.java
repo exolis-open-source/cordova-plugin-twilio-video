@@ -160,7 +160,8 @@ public class CameraCapturerCompat implements VideoCapturer {
             isPrivateImageFormatSupported = streamMap.isOutputSupportedFor(ImageFormat.PRIVATE);
         }
 
-        Integer colorFilterArrangement =
+		/*To enable this part, build should be done with cordova-android equal or higher than 9.0.0*/
+        /*Integer colorFilterArrangement =
                 cameraCharacteristics.get(
                         CameraCharacteristics.SENSOR_INFO_COLOR_FILTER_ARRANGEMENT);
 
@@ -170,7 +171,8 @@ public class CameraCapturerCompat implements VideoCapturer {
                             == CameraMetadata.SENSOR_INFO_COLOR_FILTER_ARRANGEMENT_MONO
                             || colorFilterArrangement
                             == CameraMetadata.SENSOR_INFO_COLOR_FILTER_ARRANGEMENT_NIR;
-        }
+        }*/
+
         return isPrivateImageFormatSupported && !isMonoChromeSupported;
     }
 }
