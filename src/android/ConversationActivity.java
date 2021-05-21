@@ -441,6 +441,16 @@ public class ConversationActivity extends AppCompatActivity {
                 configureAudio(false);
             }
 
+			@Override
+            public void onReconnecting(@NonNull Room room, @NonNull TwilioException e) {
+                /*For further logging capacity*/
+            }
+
+            @Override
+            public void onReconnected(@NonNull Room room) {
+                /*For further logging capacity*/
+            }
+
             @Override
             public void onDisconnected(Room room, TwilioException e) {
                 localParticipant = null;
