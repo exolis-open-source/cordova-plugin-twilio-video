@@ -22,7 +22,7 @@ import tvi.webrtc.SurfaceTextureHelper;
 
 public class CameraCapturerCompat implements VideoCapturer {
 
-	private final CameraCapturer cameraCapturer;
+	private final CameraCapturer camera1Capturer;
 	private final Camera2Capturer camera2Capturer;
 	private final VideoCapturer activeCapturer;
 	private final Map<Source, String> camera1IdMap = new HashMap<>();
