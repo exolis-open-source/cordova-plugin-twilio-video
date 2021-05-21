@@ -73,6 +73,7 @@
         <source-file src="src/android/VideoConversationPlugin.java" target-dir="src/fr/exolis/opensource/videoconversations" />
         <source-file src="src/android/ConversationActivity.java" target-dir="src/fr/exolis/opensource/videoconversations" />
         <source-file src="src/android/Dialog.java" target-dir="src/fr/exolis/opensource/videoconversations" />
+		<source-file src="src/android/CameraCapturerCompat.java" target-dir="src/fr/exolis/opensource/videoconversations" />
         <framework src="src/android/twiliovideo.gradle" custom="true" type="gradleReference" />
         <dependency id="cordova-plugin-compat" />
 

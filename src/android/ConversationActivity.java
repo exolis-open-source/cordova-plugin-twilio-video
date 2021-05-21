@@ -19,13 +19,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.twilio.video.CameraCapturer;
 import com.twilio.video.LocalParticipant;
 import com.twilio.video.Room.State;
 import com.twilio.video.Video;
 import com.twilio.video.TwilioException;
 import com.twilio.video.AudioTrack;
-import com.twilio.video.CameraCapturer.CameraSource;
 import com.twilio.video.ConnectOptions;
 import com.twilio.video.LocalAudioTrack;
 import com.twilio.video.LocalVideoTrack;
@@ -71,7 +69,7 @@ public class ConversationActivity extends AppCompatActivity {
      */
     private TextView videoStatusTextView;
     private TextView identityTextView;
-    private CameraCapturer cameraCapturer;
+    private CameraCapturerCompat cameraCapturer;
     private LocalAudioTrack localAudioTrack;
     private LocalVideoTrack localVideoTrack;
     private FloatingActionButton connectActionFab;
@@ -256,7 +254,7 @@ public class ConversationActivity extends AppCompatActivity {
         localAudioTrack = LocalAudioTrack.create(this, true);
 
         // Share your camera
-        cameraCapturer = new CameraCapturer(this, CameraSource.FRONT_CAMERA);
+        cameraCapturer = new CameraCapturer(this, CameraCapturer.Source.FRONT_CAMERA);
         localVideoTrack = LocalVideoTrack.create(this, true, cameraCapturer);
         primaryVideoView.setMirror(true);
         localVideoTrack.addRenderer(primaryVideoView);
@@ -378,7 +376,7 @@ public class ConversationActivity extends AppCompatActivity {
             localVideoTrack.addRenderer(thumbnailVideoView);
             localVideoView = thumbnailVideoView;
             thumbnailVideoView.setMirror(cameraCapturer.getCameraSource() ==
-                    CameraSource.FRONT_CAMERA);
+                    CameraCapturer.Source.FRONT_CAMERA);
         }
     }
 
@@ -591,12 +589,12 @@ public class ConversationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (cameraCapturer != null) {
-                    CameraSource cameraSource = cameraCapturer.getCameraSource();
+                    CameraCapturer.Source cameraSource = cameraCapturer.getCameraSource();
                     cameraCapturer.switchCamera();
                     if (thumbnailVideoView.getVisibility() == View.VISIBLE) {
-                        thumbnailVideoView.setMirror(cameraSource == CameraSource.BACK_CAMERA);
+                        thumbnailVideoView.setMirror(cameraSource == CameraCapturer.Source.BACK_CAMERA);
                     } else {
-                        primaryVideoView.setMirror(cameraSource == CameraSource.BACK_CAMERA);
+                        primaryVideoView.setMirror(cameraSource == CameraCapturer.Source.BACK_CAMERA);
                     }
                 }
             }
