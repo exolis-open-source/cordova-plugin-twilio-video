@@ -2,6 +2,9 @@ repositories {
     jcenter()
 }
 
+ext {
+    compileSdkVersion = 29
+}
 
 dependencies {
     compile 'com.twilio:video-android:6.3.0'

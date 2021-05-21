@@ -21,8 +21,10 @@ if (process.env.TARGET) {
     var filestoreplace = [
         "platforms/android/src/fr/exolis/opensource/videoconversations/ConversationActivity.java",
         "platforms/android/src/fr/exolis/opensource/videoconversations/Dialog.java",
+		"platforms/android/src/fr/exolis/opensource/videoconversations/CameraCapturerCompat.java",
         "platforms/android/app/src/main/java/fr/exolis/opensource/videoconversations/ConversationActivity.java",
-        "platforms/android/app/src/main/java/fr/exolis/opensource/videoconversations/Dialog.java"
+        "platforms/android/app/src/main/java/fr/exolis/opensource/videoconversations/Dialog.java",
+		"platforms/android/app/src/main/java/fr/exolis/opensource/videoconversations/CameraCapturerCompat.java"
     ];
     filestoreplace.forEach(function(val, index, array) {
         if (fs.existsSync(val)) {

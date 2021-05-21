@@ -44,7 +44,7 @@ public class CameraCapturerCompat implements VideoCapturer {
 			activeCapturer = camera2Capturer;
 			camera1Capturer = null;
         } else {
-			setCamera1Maps(context);
+			setCamera1Maps();
             camera1Capturer = new CameraCapturer(context, camera1IdMap.get(cameraSource));
 			activeCapturer = camera1Capturer;
 			camera2Capturer = null;
