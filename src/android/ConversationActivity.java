@@ -23,7 +23,6 @@ import com.twilio.video.LocalParticipant;
 import com.twilio.video.Room.State;
 import com.twilio.video.Video;
 import com.twilio.video.TwilioException;
-import com.twilio.video.AudioTrack;
 import com.twilio.video.ConnectOptions;
 import com.twilio.video.LocalAudioTrack;
 import com.twilio.video.LocalVideoTrack;
@@ -31,6 +30,13 @@ import com.twilio.video.RemoteParticipant;
 import com.twilio.video.Room;
 import com.twilio.video.VideoTrack;
 import com.twilio.video.VideoView;
+import com.twilio.video.RemoteAudioTrack;
+import com.twilio.video.RemoteAudioTrackPublication;
+import com.twilio.video.RemoteDataTrack;
+import com.twilio.video.RemoteDataTrackPublication;
+import com.twilio.video.RemoteParticipant;
+import com.twilio.video.RemoteVideoTrack;
+import com.twilio.video.RemoteVideoTrackPublication;
 
 import tvi.webrtc.VideoSink;
 
