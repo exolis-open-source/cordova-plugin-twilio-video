@@ -428,7 +428,7 @@ public class ConversationActivity extends AppCompatActivity {
 				videoStatusTextView.setText("En attente de la connexion de votre interlocuteur");
                 setTitle(room.getName());
 
-                for (RemoteParticipant participant : room.getParticipants()) {
+                for (RemoteParticipant participant : room.getRemoteParticipants()) {
                     addParticipant(participant);
                     break;
                 }
