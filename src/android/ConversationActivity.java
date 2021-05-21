@@ -489,48 +489,103 @@ public class ConversationActivity extends AppCompatActivity {
         };
     }
 
-    private Participant.Listener participantListener() {
-        return new Participant.Listener() {
+    private RemoteParticipant.Listener participantListener() {
+        return new RemoteParticipant.Listener() {
             @Override
-            public void onAudioTrackAdded(Participant participant, AudioTrack audioTrack) {
-         //       videoStatusTextView.setText("onAudioTrackAdded");
+            public void onAudioTrackPublished(RemoteParticipant remoteParticipant, RemoteAudioTrackPublication remoteAudioTrackPublication) {
+                /*For further logging capacity*/
             }
 
             @Override
-            public void onAudioTrackRemoved(Participant participant, AudioTrack audioTrack) {
-           //     videoStatusTextView.setText("onAudioTrackRemoved");
+            public void onAudioTrackUnpublished(RemoteParticipant remoteParticipant, RemoteAudioTrackPublication remoteAudioTrackPublication) {
+                /*For further logging capacity*/
             }
 
             @Override
-            public void onVideoTrackAdded(Participant participant, VideoTrack videoTrack) {
-              //  videoStatusTextView.setText("");
-                addParticipantVideo(videoTrack);
+            public void onAudioTrackSubscribed(RemoteParticipant remoteParticipant, RemoteAudioTrackPublication remoteAudioTrackPublication, RemoteAudioTrack remoteAudioTrack) {
+                /*For further logging capacity*/
             }
 
             @Override
-            public void onVideoTrackRemoved(Participant participant, VideoTrack videoTrack) {
-               // videoStatusTextView.setText("Participant disconnected");
-                removeParticipantVideo(videoTrack);
+            public void onAudioTrackSubscriptionFailed(RemoteParticipant remoteParticipant, RemoteAudioTrackPublication remoteAudioTrackPublication, TwilioException twilioException) {
+                /*For further logging capacity*/
             }
 
             @Override
-            public void onAudioTrackEnabled(Participant participant, AudioTrack audioTrack) {
-
+            public void onAudioTrackUnsubscribed(RemoteParticipant remoteParticipant, RemoteAudioTrackPublication remoteAudioTrackPublication, RemoteAudioTrack remoteAudioTrack) {
+                /*For further logging capacity*/
             }
 
             @Override
-            public void onAudioTrackDisabled(Participant participant, AudioTrack audioTrack) {
-
+            public void onVideoTrackPublished(RemoteParticipant remoteParticipant, RemoteVideoTrackPublication remoteVideoTrackPublication) {
+                /*For further logging capacity*/
             }
 
             @Override
-            public void onVideoTrackEnabled(Participant participant, VideoTrack videoTrack) {
-
+            public void onVideoTrackUnpublished(RemoteParticipant remoteParticipant, RemoteVideoTrackPublication remoteVideoTrackPublication) {
+                /*For further logging capacity*/
             }
 
             @Override
-            public void onVideoTrackDisabled(Participant participant, VideoTrack videoTrack) {
+            public void onVideoTrackSubscribed(RemoteParticipant remoteParticipant, RemoteVideoTrackPublication remoteVideoTrackPublication, RemoteVideoTrack remoteVideoTrack) {
+                /*For further logging capacity*/
+				addParticipantVideo(remoteVideoTrack);
+            }
 
+            @Override
+            public void onVideoTrackSubscriptionFailed(RemoteParticipant remoteParticipant, RemoteVideoTrackPublication remoteVideoTrackPublication, TwilioException twilioException) {
+                /*For further logging capacity*/
+            }
+
+            @Override
+            public void onVideoTrackUnsubscribed(RemoteParticipant remoteParticipant, RemoteVideoTrackPublication remoteVideoTrackPublication, RemoteVideoTrack remoteVideoTrack) {
+                /*For further logging capacity*/
+                removeParticipantVideo(remoteVideoTrack);
+            }
+
+            @Override
+            public void onDataTrackPublished(RemoteParticipant remoteParticipant, RemoteDataTrackPublication remoteDataTrackPublication) {
+                /*For further logging capacity*/
+            }
+
+            @Override
+            public void onDataTrackUnpublished(RemoteParticipant remoteParticipant, RemoteDataTrackPublication remoteDataTrackPublication) {
+                /*For further logging capacity*/
+            }
+
+            @Override
+            public void onDataTrackSubscribed(RemoteParticipant remoteParticipant, RemoteDataTrackPublication remoteDataTrackPublication, RemoteDataTrack remoteDataTrack) {
+                /*For further logging capacity*/
+            }
+
+            @Override
+            public void onDataTrackSubscriptionFailed(RemoteParticipant remoteParticipant, RemoteDataTrackPublication remoteDataTrackPublication, TwilioException twilioException) {
+                /*For further logging capacity*/
+            }
+
+            @Override
+            public void onDataTrackUnsubscribed(RemoteParticipant remoteParticipant, RemoteDataTrackPublication remoteDataTrackPublication, RemoteDataTrack remoteDataTrack) {
+                /*For further logging capacity*/
+            }
+
+            @Override
+            public void onAudioTrackEnabled(RemoteParticipant remoteParticipant, RemoteAudioTrackPublication remoteAudioTrackPublication) {
+				/*For further logging capacity*/
+            }
+
+            @Override
+            public void onAudioTrackDisabled(RemoteParticipant remoteParticipant, RemoteAudioTrackPublication remoteAudioTrackPublication) {
+				/*For further logging capacity*/
+            }
+
+            @Override
+            public void onVideoTrackEnabled(RemoteParticipant remoteParticipant, RemoteVideoTrackPublication remoteVideoTrackPublication) {
+				/*For further logging capacity*/
+            }
+
+            @Override
+            public void onVideoTrackDisabled(RemoteParticipant remoteParticipant, RemoteVideoTrackPublication remoteVideoTrackPublication) {
+				/*For further logging capacity*/
             }
         };
     }
