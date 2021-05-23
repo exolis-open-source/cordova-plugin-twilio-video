@@ -28,7 +28,7 @@
         <resource-file src="src/ios/Resources/switch-camera-ios-white-33px.png" target="Resources/switch-camera-ios-white-33px.png" />
 
         <!-- The earlier iOS OS that this pod supports is 8.1, we can also update to 1.4.3 -->
-        <pods-config ios-min-version="8.1" use-frameworks="true">
+        <pods-config ios-min-version="9.0" use-frameworks="true">
           <!-- If you are facing 'spec' issues on "ionic cordova platform add ios" un commit this section, here I am specificying which
           github path the specs for the needed Twilio v1 SDK is located -->
           <!-- <source url="https://github.com/CocoaPods/Specs"/>
