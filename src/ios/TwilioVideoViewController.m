@@ -60,7 +60,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self logMessage:[NSString stringWithFormat:@"TwilioVideo v%@", [TwilioVideoSDK version]]];
+    //[self logMessage:[NSString stringWithFormat:@"TwilioVideo v%@", [TwilioVideoSDK version]]];
+	[self logMessage:[NSString stringWithFormat:@"Ma téléconsultation"]];
 
     // Configure access token manually for testing, if desired! Create one manually in the console
     //  self.accessToken = @"TWILIO_ACCESS_TOKEN";
