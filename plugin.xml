@@ -34,7 +34,7 @@
           <!-- <source url="https://github.com/CocoaPods/Specs"/>
           <source url="https://github.com/CocoaPods/Specs/tree/master/Specs/1/d/9/TwilioVideo/'"/> -->
         </pods-config>
-        <pod name="TwilioVideo" version="4.4.0" />
+        <pod name="TwilioVideo" version="~> 4.4.0" />
 
         <preference name="CAMERA_USAGE_DESCRIPTION" default="Camera" />
         <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
