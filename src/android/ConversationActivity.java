@@ -409,7 +409,8 @@ public class ConversationActivity extends AppCompatActivity {
 				removeParticipantVideo(remoteVideoTrackPublication.getRemoteVideoTrack());
 			}
         }
-        participant.setListener(null);
+        //Not needed anymore
+        //participant.setListener(null);
         moveLocalVideoToPrimaryView();
     }
 
