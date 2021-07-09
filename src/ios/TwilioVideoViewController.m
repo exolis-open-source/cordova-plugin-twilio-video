@@ -339,7 +339,7 @@
 }
 
 - (void)room:(TVIRoom *)room didDisconnectWithError:(nullable NSError *)error {
-    // [self logMessage:[NSString stringWithFormat:@"Disconncted from room %@, error = %@", room.name, error]];
+    [self logMessage:[NSString stringWithFormat:@"Déconnexion de la salle suite à erreur : %@", error]];
 
     [self cleanupRemoteParticipant];
     self.room = nil;
