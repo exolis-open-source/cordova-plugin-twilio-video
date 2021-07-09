@@ -345,6 +345,7 @@
     self.room = nil;
 
     [self showRoomUI:NO];
+	[self dismissViewControllerAnimated:true completion:nil];
 }
 
 - (void)room:(TVIRoom *)room didFailToConnectWithError:(nonnull NSError *)error{
@@ -353,6 +354,7 @@
     self.room = nil;
 
     [self showRoomUI:NO];
+	[self dismissViewControllerAnimated:true completion:nil];
 }
 
 - (void)room:(TVIRoom *)room isReconnectingWithError:(NSError *)error {
