@@ -348,7 +348,7 @@
 }
 
 - (void)room:(TVIRoom *)room didFailToConnectWithError:(nonnull NSError *)error{
-    //  [self logMessage:[NSString stringWithFormat:@"Failed to connect to room, error = %@", error]];
+    [self logMessage:[NSString stringWithFormat:@"Erreur lors de la connection, erreur survenue : %@", error]];
 
     self.room = nil;
 
